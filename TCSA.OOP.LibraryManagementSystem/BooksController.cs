@@ -21,7 +21,7 @@ internal  class BooksController
         AnsiConsole.MarkupLine("[yellow]List of Books:[/]");
 
         // Printing each book to the console with a loop
-        foreach (var book in books)
+        foreach (var book in MockDatabase.Books)
         {
             AnsiConsole.MarkupLine($"- [cyan]{book}[/]");
         }
@@ -40,14 +40,14 @@ internal  class BooksController
         var title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the book to add:");
 
         // checking if the book already exists to avoid duplication.
-        if (books.Contains(title))
+        if (MockDatabase.Books.Contains(title))
         {
             AnsiConsole.MarkupLine("[red]This book already exists.[/]");
         }
         else
         {
             //if book doesn't exist, add to the list of books.
-            books.Add(title);
+            MockDatabase.Books.Add(title);
             AnsiConsole.MarkupLine("[green]Book added successfully![/]");
         }
 
@@ -58,7 +58,7 @@ internal  class BooksController
     internal  void DeleteBook()
     {
         // checking if there are any books to delete and letting the user know
-        if (books.Count == 0)
+        if (MockDatabase.Books.Count == 0)
         {
             AnsiConsole.MarkupLine("[red]No books available to delete.[/]");
             Console.ReadKey();
@@ -70,11 +70,11 @@ internal  class BooksController
         var bookToDelete = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
             .Title("Select a [red]book[/] to delete:")
-            .AddChoices(books));
+            .AddChoices(MockDatabase.Books));
 
         /* Using the Remove method to delete a book. This method returns a boolean
           that we can use to present a message in case of success or failure.*/
-        if (books.Remove(bookToDelete))
+        if (MockDatabase.Books.Remove(bookToDelete))
         {
             AnsiConsole.MarkupLine("[red]Book deleted successfully![/]");
         }

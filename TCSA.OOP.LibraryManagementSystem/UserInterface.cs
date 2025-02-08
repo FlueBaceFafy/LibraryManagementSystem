@@ -1,11 +1,12 @@
 ﻿using Spectre.Console;
 using TCSA.OOP.LibraryManagementSystem;
-using  TCSA.OOP.LibraryManagement.Enums;
+using static TCSA.OOP.LibraryManagement.Enums;
 
 namespace TCSA.OOP.LibraryManagement;
 
 internal class UserInterface
 {
+    private BooksController booksController = new BooksController();
     internal  void MainMenu()
     {
         /* Next we need to make sure the menu runs again after an operation is completed. 
@@ -25,15 +26,15 @@ internal class UserInterface
             switch (choice)
             {
                 case MenuOption.ViewBooks:
-                    BooksController.ViewBooks();
+                    booksController.ViewBooks();
                     break;
 
                 case MenuOption.AddBook:
-                    BooksController.AddBook();
+                    booksController.AddBook();
                     break;
 
                 case MenuOption.DeleteBook:
-                    BooksController.DeleteBook();
+                    booksController.DeleteBook();
                     break;
             }
         }
