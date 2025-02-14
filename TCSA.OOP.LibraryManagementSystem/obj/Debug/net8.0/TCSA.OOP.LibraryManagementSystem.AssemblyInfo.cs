@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TCSA.OOP.LibraryManagementSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2ed9cd624d1eeeca6bc0f7297eed743bac85e4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00a1721c7da796a42f2acaf204d8cd4d9ef0eee4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TCSA.OOP.LibraryManagementSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TCSA.OOP.LibraryManagementSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
